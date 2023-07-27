@@ -5,7 +5,7 @@
        private $conn;
 
        public function __construct(){
-           $this->conn = new mysqli("127.0.0.1", 'root', '', 'kodigoapp');
+           $this->conn = new mysqli("127.0.0.1", 'root', '', 'kodigo');
            if ($this->conn->connect_error){
                die("Connection failed: " . $this->conn->connect_error);
            }
