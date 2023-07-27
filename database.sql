@@ -1,5 +1,5 @@
--- Active: 1690428813007@@127.0.0.1@3306
-USE kodigoapp;
+-- Active: 1690428813007@@127.0.0.1@3306@kodigo
+USE kodigo;
 
 SELECT * FROM bootcamps;
 
