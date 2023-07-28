@@ -5,7 +5,7 @@ require_once './config.php';
        private $conn;
 
        public function __construct(){
-           $this->conn = new mysqli('DB_HOST', 'DB_USER', '', 'DB_NAME');
+           $this->conn = new mysqli('127.0.0.1', 'root', '', 'kodigo');
            if ($this->conn->connect_error){
                die("Connection failed: " . $this->conn->connect_error);
            }
@@ -29,6 +29,22 @@ require_once './config.php';
         return $bootcamps;
 
        } 
+
+       public function add_bootcamp($title, $description, $start_bootcamp, $end_bootcamp, $modules){
+       //CREAR LA CONSULTA
+          $sql = "INSERT INTO bootcamps(title, description, start_bootcamp, end_bootcamp, modules)
+               VALUES ('$title', '$description', '$start_bootcamp', '$end_bootcamp','$modules')
+          ";
+
+          //EJECUTAR LA CONSULTA
+          $result = $this->conn->query($sql);
+          if ($result){
+              echo 'New bootcamp created';
+          }else{
+              echo 'Error in create new bootcamp';
+          }
+
+       }
 
    }
 
